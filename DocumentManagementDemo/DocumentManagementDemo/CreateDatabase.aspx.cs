@@ -21,6 +21,8 @@ namespace DocumentManagementDemo
 
             const string FilesVirtualPath = @"~\App_Data\Files";
             DocumentsDbPopulationHelper.Populate(Server.MapPath(FilesVirtualPath));
+
+            Button1.Text = "The database has been created";
         }
     }
 }
