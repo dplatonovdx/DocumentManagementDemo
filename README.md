@@ -53,17 +53,17 @@ Follow the instructions below to launch the project on your machine:
 3. Wait until the button's text is changed to **Database created**.
 4. Run the **Default.aspx** to execute the application.
 
-These steps are required to create a database that stores files contained in the [AppData/Files](http://asp-git/platonov.dmitry/SandboxRepo/src/master/DocumentManagementDemo/DocumentManagementDemo/App_Data/Files) folder. The database stores files displayed in the file explorer. Refer to the [Populating the File Manager with files using a database as a file storage](http://asp-git/platonov.dmitry/SandboxRepo/src/master/Database.md) topic to see this feature's description.
+These steps are required to create a database that stores files contained in the [AppData/Files](https://github.com/dplatonovdx/DocumentManagementDemo/tree/docTest/DocumentManagementDemo/DocumentManagementDemo/App_Data/Files) folder. The database stores files displayed in the file explorer. Refer to the [Populating the File Manager with files using a database as a file storage](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/Database.md) topic to see this feature's description.
 
 ## Conceptual topics
   
 The following topics describe how this application was implemented.
 
-- **Step 1**: [Populating the File Manager with files using a database as a file storage](http://asp-git/platonov.dmitry/SandboxRepo/src/master/Database.md)
-- **Step 2**: [Implementing custom filtering and applying security settings for the File Manager](http://asp-git/platonov.dmitry/SandboxRepo/src/master/FileManager.md)
-- **Step 3**: [Building a responsive layout for the file explorer using DevExpress controls and CSS styles](http://asp-git/platonov.dmitry/SandboxRepo/src/master/Layout.md)
-- **Step 4**: [Reading and viewing office documents using Rich Text Editor and Spreadsheet controls](http://asp-git/platonov.dmitry/SandboxRepo/src/master/OfficeDocs.md)
+- **Step 1**: [Populating the File Manager with files using a database as a file storage](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/Database.md)
+- **Step 2**: [Implementing custom filtering and applying security settings for the File Manager](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/FileManager.md)
+- **Step 3**: [Building a responsive layout for the file explorer using DevExpress controls and CSS styles](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/Layout.md)
+- **Step 4**: [Reading and viewing office documents using Rich Text Editor and Spreadsheet controls](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/OfficeDocs.md)
 
 ## First Step
 
-**Step 1**: [Populating the File Manager with files using a database as a file storage](http://asp-git/platonov.dmitry/SandboxRepo/src/master/Database.md)
+**Step 1**: [Populating the File Manager with files using a database as a file storage](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/Database.md)

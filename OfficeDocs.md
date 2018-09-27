@@ -1,6 +1,6 @@
 # Step 4: Reading and viewing office documents using Rich Text Editor and Spreadsheet controls
 
-This article describes how to implement functionality for reading and viewing text documents and worksheets using DevExpress ASP.NET controls. The described functionality is used in the web application intended for document management.  You can find the source code and description for this application in [this repository](http://asp-git/platonov.dmitry/SandboxRepo).
+This article describes how to implement functionality for reading and viewing text documents and worksheets using DevExpress ASP.NET controls. The described functionality is used in the web application intended for document management.
 
 - [General Information](#general-information)
 - [View mode for text documents](#view-mode-for-text-documents)
@@ -22,7 +22,7 @@ If end-users click the pen button, the editing functionality is enabled.
 
 ### Opening office documents
 
-When an end-user selects a file in the file explorer, it refers to the [OpenDocumentHandler.aspx](http://asp-git/platonov.dmitry/SandboxRepo/src/master/DocumentManagementDemo/DocumentManagementDemo/OpenDocumentHandler.aspx) page. This page contains code that defines the file's extension and performs the corresponding action: opens office documents or downloads other files:
+When an end-user selects a file in the file explorer, it refers to the [OpenDocumentHandler.aspx](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/DocumentManagementDemo/DocumentManagementDemo/OpenDocumentHandler.aspx) page. This page contains code that defines the file's extension and performs the corresponding action: opens office documents or downloads other files:
 
 ```cs
 public partial class OpenDocumentHandler : System.Web.UI.Page
@@ -46,15 +46,15 @@ public partial class OpenDocumentHandler : System.Web.UI.Page
 
 Office documents are handled on separate pages:
 
-- The .rtf, .doc, .docx, .txt files are handlded in the [RichEdit.aspx](http://asp-git/platonov.dmitry/SandboxRepo/src/master/DocumentManagementDemo/DocumentManagementDemo/RichEdit.aspx) page.
+- The .rtf, .doc, .docx, .txt files are handlded in the [RichEdit.aspx](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/DocumentManagementDemo/DocumentManagementDemo/RichEdit.aspx) page.
 
-- The .xlsx, .xls files files are hanlded in the [Spreadsheet.aspx](http://asp-git/platonov.dmitry/SandboxRepo/src/master/DocumentManagementDemo/DocumentManagementDemo/Spreadsheet.aspx) page.
+- The .xlsx, .xls files files are hanlded in the [Spreadsheet.aspx](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/DocumentManagementDemo/DocumentManagementDemo/Spreadsheet.aspx) page.
 
-The *RichEdit.aspx* and *Spreadsheet.aspx* pages are placed in the same master page - [Document.Master](http://asp-git/platonov.dmitry/SandboxRepo/src/master/DocumentManagementDemo/DocumentManagementDemo/Document.Master).
+The *RichEdit.aspx* and *Spreadsheet.aspx* pages are placed in the same master page - [Document.Master](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/DocumentManagementDemo/DocumentManagementDemo/Document.Master).
 
 ### Page layout
 
-The [Document.Master](http://asp-git/platonov.dmitry/SandboxRepo/src/master/DocumentManagementDemo/DocumentManagementDemo/Document.Master) page contains a header with text and two navigation buttons. Refer to the [Building responsive layout for the file explorer using DevExpress controls and CSS styling](http://asp-git/platonov.dmitry/SandboxRepo/src/master/Layout.md) article for information about this toolbar.
+The [Document.Master](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/DocumentManagementDemo/DocumentManagementDemo/Document.Master) page contains a header with text and two navigation buttons. Refer to the [Building responsive layout for the file explorer using DevExpress controls and CSS styling](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/Layout.md) article for information about this toolbar.
 
 The navigation buttons allow end-users to switch between view and edit modes and or back to the file explorer. The following code adds or removes the `&edit=true` parameter to the query string when navigational buttons are clicked:
 
@@ -95,7 +95,7 @@ When a user opens a document in the file explorer, it is opened in view mode.
 
 ## View mode for text documents
 
-Text documents (.rtf, .doc, .docx, .txt files) are processed in the [RichEdit.aspx](http://asp-git/platonov.dmitry/SandboxRepo/src/master/DocumentManagementDemo/DocumentManagementDemo/RichEdit.aspx) page.
+Text documents (.rtf, .doc, .docx, .txt files) are processed in the [RichEdit.aspx](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/DocumentManagementDemo/DocumentManagementDemo/RichEdit.aspx) page.
 
 The DevExpress [ASPxRichEdit](https://docs.devexpress.com/AspNet/17721/asp.net-webforms-controls/rich-text-editor) control allows end-users to view, edit, and save text documents. However, the control does not provide functionality to adjust the document's content to browser's width that is required for reading documents, especially on mobile devices. For this reason, text documents are converted to the HTML format and displayed in the `<div>` tag for viewing documents. This solution also accelerates the page's render in comparison with the page with the Rich Edit control.      
 
@@ -146,7 +146,7 @@ The HTML Editor's [Import](https://docs.devexpress.com/AspNet/DevExpress.Web.ASP
 
 Saving documents in HTML format to the temporary folder optimizes the web application's performance. If the open document is not changed, its HTML representation can be loaded from this folder instead of initialization the HTML Editor control and converting the document's content to the HTML format.
 
-If a document is changed by end-user and saved, the cached HTML document should be deleted. To accomplish this task, the *ClearDocumentPreviewFilesById* method is called in the [DataProvider.cs](http://asp-git/platonov.dmitry/SandboxRepo/src/master/DocumentManagementSolution/DocumentManagementSolution/Code/DataProvider.cs#L90-L102) file:
+If a document is changed by end-user and saved, the cached HTML document should be deleted. To accomplish this task, the *ClearDocumentPreviewFilesById* method is called in the [DataProvider.cs](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/DocumentManagementDemo/DocumentManagementDemo/Code/DataProvider.cs#L112-L128) file:
 
 ```cs
 public void SetDocumentContent(long id, byte[] data) {
@@ -223,7 +223,7 @@ The media queries specify responsive paddings for different browser window's wid
 
 ## View mode for worksheets
 
-Worksheets (.xlsx, .xls files) are processed in the [Spreadsheet.aspx](http://asp-git/platonov.dmitry/SandboxRepo/src/master/DocumentManagementDemo/DocumentManagementDemo/Spreadsheet.aspx) page. 
+Worksheets (.xlsx, .xls files) are processed in the [Spreadsheet.aspx](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/DocumentManagementDemo/DocumentManagementDemo/Spreadsheet.aspx) page. 
 
 The ASPxSpreadsheet provides [Reading View Mode](https://docs.devexpress.com/AspNet/120172/asp.net-webforms-controls/spreadsheet/concepts/data-presentation/reading-view-mode) that disables editing functionality and replaces the Ribbon UI with a compact toolbar. When a document is opened in view mode, the Spreadsheet control's [Mode](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxSpreadsheet.SpreadsheetViewSettings.Mode) property is set to **Reading**.
 
@@ -274,7 +274,7 @@ The `Guid.NewGuid().ToString()` code guarantees the *documentID* parameter's uni
 
 ### Saving documents
 
-When a document is saved, the *Utils.CurrentDataProvider.SetDocumentContent* method is called to update the *ContentSize* filed described in [this topic](http://asp-git/platonov.dmitry/SandboxRepo/src/master/Database.md#2-importing-data-from-file-system-to-database).
+When a document is saved, the *Utils.CurrentDataProvider.SetDocumentContent* method is called to update the *ContentSize* filed described in [this topic](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/Database.md#1-create-the-database).
 
 ```cs
 protected void richEdit_Saving(object source, DocumentSavingEventArgs e)

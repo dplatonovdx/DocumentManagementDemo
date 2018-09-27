@@ -15,9 +15,9 @@ Perform the following steps to populate the File Manager control with files:
 
 ## 1. Create the database
 
-The database is created using the [Entity Framework](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/ef/overview). You can add the framework to the project using the [Nuget Package Manager](https://www.nuget.org/packages/EntityFramework/). The [DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=vs.113).aspx) class and data models are stored in the [Code/Context.cs](http://asp-git/platonov.dmitry/SandboxRepo/src/master/Code/Context.cs) file.
+The database is created using the [Entity Framework](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/ef/overview). You can add the framework to the project using the [Nuget Package Manager](https://www.nuget.org/packages/EntityFramework/). The [DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=vs.113).aspx) class and data models are stored in the [Code/Context.cs](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/DocumentManagementDemo/DocumentManagementDemo/Code/Context.cs) file.
 
-The [Code/Context.cs](http://asp-git/platonov.dmitry/SandboxRepo/src/master/Code/Context.cs) file also contains models that describe data contained in the database. The *DocumentItem* class represents items stored in the file explorer.
+The [Code/Context.cs](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/DocumentManagementDemo/DocumentManagementDemo/Code/Context.cs) file also contains models that describe data contained in the database. The *DocumentItem* class represents items stored in the file explorer.
 
 ```cs
 public class DocumentItem {
@@ -53,26 +53,26 @@ For the same purposes, the file's size is calculated once and stored in the *Con
 
 ## 2. Populate the database with files from the file system
 
-The *DocumentsDbPopulationHelper* class stored in the [Code/DocumentPopulation.cs](http://asp-git/platonov.dmitry/SandboxRepo/src/master/DocumentManagementDemo/DocumentManagementDemo/Code/DocumentsPopulation.cs) file contains code that creates a new database (if it was not created before) and populates it with content. The class provides the public [Populate](http://asp-git/platonov.dmitry/SandboxRepo/src/master/DocumentManagementDemo/DocumentManagementDemo/Code/DocumentsPopulation.cs#L7-L21) method to execute private methods that recursively walk through each file and folder starting from the target folder and adds them to the database.
+The *DocumentsDbPopulationHelper* class stored in the [Code/DocumentPopulation.cs](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/DocumentManagementDemo/DocumentManagementDemo/Code/DocumentsPopulation.cs) file contains code that creates a new database (if it was not created before) and populates it with content. The class provides the public [Populate](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/DocumentManagementDemo/DocumentManagementDemo/Code/DocumentsPopulation.cs#L7-L21) method to execute private methods that recursively walk through each file and folder starting from the target folder and adds them to the database.
 
-In this solution, the *Populate* method is called in the [CreateDatabase.aspx](http://asp-git/platonov.dmitry/SandboxRepo/src/master/DocumentManagementDemo/DocumentManagementDemo/CreateDatabase.aspx) page. This page contains a button that calls the *Populate* method. 
+In this solution, the *Populate* method is called in the [CreateDatabase.aspx](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/DocumentManagementDemo/DocumentManagementDemo/CreateDatabase.aspx) page. This page contains a button that calls the *Populate* method. 
 
 
 ## 3. Connect the File Manager with the database
 
-The ASPxFileManager control is located in the [Default.aspx](http://asp-git/platonov.dmitry/SandboxRepo/src/master/DocumentManagementDemo/DocumentManagementDemo/Default.aspx) file and bound to the database using a [file system provider](https://docs.devexpress.com/AspNet/9905/asp.net-webforms-controls/file-management/file-manager/concepts/file-system-providers/file-system-providers-overview). The file system provider is an API to access the virtual file system in the File Manager control. The file system provider should be assigned to the control in the *Page_Init* event handler.
+The ASPxFileManager control is located in the [Default.aspx](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/DocumentManagementDemo/DocumentManagementDemo/Default.aspx) file and bound to the database using a [file system provider](https://docs.devexpress.com/AspNet/9905/asp.net-webforms-controls/file-management/file-manager/concepts/file-system-providers/file-system-providers-overview). The file system provider is an API to access the virtual file system in the File Manager control. The file system provider should be assigned to the control in the *Page_Init* event handler.
 
 ``` cs
 protected void Page_Init(object sender, EventArgs e) {
     fileManager.CustomFileSystemProvider = new DocumentsFileSystemProvider(Utils.CurrentDataProvider);
 }
 ```
-There are several types of file system providers described in [this topic](https://docs.devexpress.com/AspNet/9905/asp.net-webforms-controls/file-management/file-manager/concepts/file-system-providers/file-system-providers-overview). In this project, the [custom file system provider](https://docs.devexpress.com/AspNet/9907/asp.net-webforms-controls/file-management/file-manager/concepts/file-system-providers/custom-file-system-provider) is implemented via the *DocumentsFileSystemProvider* class stored in the [Code/DocumentsFileSystemProvider](http://asp-git/platonov.dmitry/SandboxRepo/src/master/DocumentManagementDemo/DocumentManagementDemo/Code/DocumentsFileSystemProvider.cs) file.
+There are several types of file system providers described in [this topic](https://docs.devexpress.com/AspNet/9905/asp.net-webforms-controls/file-management/file-manager/concepts/file-system-providers/file-system-providers-overview). In this project, the [custom file system provider](https://docs.devexpress.com/AspNet/9907/asp.net-webforms-controls/file-management/file-manager/concepts/file-system-providers/custom-file-system-provider) is implemented via the *DocumentsFileSystemProvider* class stored in the [Code/DocumentsFileSystemProvider](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/DocumentManagementDemo/DocumentManagementDemo/Code/DocumentsFileSystemProvider.cs) file.
 
-The custom file system provider overrides the [FileSystemProviderBase](https://docs.devexpress.com/AspNet/DevExpress.Web.FileSystemProviderBase) class's required virtual methods. These methods use common LINQ code that works for most database providers. You can add the code stored in the [Code/DocumentsFileSystemProvider](http://asp-git/platonov.dmitry/SandboxRepo/src/master/DocumentManagementDemo/DocumentManagementDemo/Code/DocumentsFileSystemProvider.cs) file in your web application and use it without any changes for other data sources. 
+The custom file system provider overrides the [FileSystemProviderBase](https://docs.devexpress.com/AspNet/DevExpress.Web.FileSystemProviderBase) class's required virtual methods. These methods use common LINQ code that works for most database providers. You can add the code stored in the [Code/DocumentsFileSystemProvider](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/DocumentManagementDemo/DocumentManagementDemo/Code/DocumentsFileSystemProvider.cs) file in your web application and use it without any changes for other data sources. 
 
 ## Next Step: 
-**Step 2**: [Implementing custom filtering and applying security settings for the File Manager](http://asp-git/platonov.dmitry/SandboxRepo/src/master/FileManager.md)
+**Step 2**: [Implementing custom filtering and applying security settings for the File Manager](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/FileManager.md)
 
 
 

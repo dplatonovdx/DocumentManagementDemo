@@ -1,6 +1,6 @@
 # Step 3: Building a responsive layout for the file explorer using DevExpress controls and CSS styles
 
-This article describes how to implement a responsive layout for a web application using DevExpress ASP.NET controls. The described layout is used in the web application intended for document management. You can find the source code and description for this application in [this repository](http://asp-git/platonov.dmitry/SandboxRepo).
+This article describes how to implement a responsive layout for a web application using DevExpress ASP.NET controls. The described layout is used in the web application intended for document management.
 
 The layout consists of the following areas:
 
@@ -409,4 +409,4 @@ The CSS rule below allows you to enable this scrolling for a web page's elements
 
 ## Next Step
 
-**Step 4**: [Reading and viewing office text documents using Rich Text Editor and Spreadsheet controls](http://asp-git/platonov.dmitry/SandboxRepo/src/master/OfficeDocs.md)
+**Step 4**: [Reading and viewing office text documents using Rich Text Editor and Spreadsheet controls](https://github.com/dplatonovdx/DocumentManagementDemo/blob/docTest/OfficeDocs.md)
