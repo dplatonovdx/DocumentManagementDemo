@@ -3,8 +3,8 @@
 This article describes how to implement the following features for the [ASPxFileManager control](https://docs.devexpress.com/AspNet/9030/asp.net-webforms-controls/file-management/file-manager/aspxfilemanager-overview):
 
 1. [Filtering by file extensions and last modification date](#1-filtering-by-file-extensions-and-last-modification-date)
-    * [Displaying filtered files' location](#displaying-filtered-files'-location)
-    * [Using history API for saving the application's state](#using-history-API-for-saving-the-application's-state)
+    * [Displaying filtered files' location](#displaying-filtered-files-location)
+    * [Using history API for saving the application's state](#using-history-api-for-saving-the-applications-state)
 2. [Preventing uploading of files based on their extension and size](#2-preventing-uploading-of-files-based-on-their-extension-and-size)
 
 ## 1. Filtering by file extensions and last modification date

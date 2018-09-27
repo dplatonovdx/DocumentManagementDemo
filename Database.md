@@ -10,7 +10,7 @@ Perform the following steps to populate the File Manager control with files:
 
 1. [Create the database](#1-create-the-database)
 2. [Populate the database with files from the file system](#2-populate-the-database-with-files-from-the-file-system) 
-2. [Connect the File Manager with the database](#3-connect-the-File-Manager-with-the-database)
+2. [Connect the File Manager with the database](#3-connect-the-file-manager-with-the-database)
 
 
 ## 1. Create the database

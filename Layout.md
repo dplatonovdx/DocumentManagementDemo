@@ -4,9 +4,9 @@ This article describes how to implement a responsive layout for a web applicatio
 
 The layout consists of the following areas:
 
-- [Page Header](#page-Header)
-- [Left-side Collapsible Menu](#left-side-Collapsible-Menu)
-- [File Manager](#adaptive-File-Manager)
+- [Page Header](#page-header)
+- [Left-side Collapsible Menu](#left-side-collapsible-menu)
+- [File Manager](#adaptive-file-manager)
 
 ![MainElements](/img/layoutHTML.png)
 
